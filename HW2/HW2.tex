@@ -1,0 +1,92 @@
+\documentclass[12pt]{article}
+ \usepackage{xcolor}
+ \usepackage[margin=1in]{geometry} 
+ \usepackage{amsmath,amsthm,amssymb}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Homework 2}
+\author{Amir Arsalan Yavari}
+% \date{} 
+\maketitle
+
+\textbf{Prove that if the reliability formula is exponential, then the failure of the system is memoryless.}\\[10pt]
+
+\begin{center}
+$R(t) = e^{-\lambda t} \implies P(T > t) = P(T > t+s \mid T > s)$\\[7pt]
+\end{center}
+
+\textbf{Proof:}
+
+To show that the system is memoryless, we need to prove the following expression:
+
+\begin{center}
+    \( P(T > t) = P(T > t+s \mid T > s) \)
+\end{center}
+
+First of all we expand the following expression:
+
+\begin{center}
+    \( P(T > t+s \mid T > s) = \frac{P(T > t+s \cap T > s)}{P(T > s)} \)
+\end{center}
+
+\colorbox{yellow}{We know \( T > t+s \) then \( T > s \). Thus we can say \( P(T > t+s \cap T > s) = P(T > t+s) \).}
+\\
+
+Therefore:
+
+\begin{center}
+    \( P(T > t+s \mid T > s) = \frac{P(T > t+s)}{P(T > s)} \)
+\end{center}
+
+On the one hand, we have the reliability formula, which is the assumption of the problem.
+
+\begin{center}
+    \( R(t) = e^{-\lambda t} \implies P(T > t) = e^{-\lambda t} \)
+\end{center}
+
+Thus:
+
+\begin{center}
+    \( P(T > s) = e^{-\lambda s} \quad \text{and} \quad P(T > t+s) = e^{-\lambda(t+s)} = e^{-\lambda t} \cdot e^{-\lambda s} \)
+\end{center}
+
+Now we put the expression \( P(T > t) \) and \( P(T > t+s \cap T > s) = P(T > t+s) \) in reliability formula:
+
+\begin{center}
+    \textcolor{teal}{\( P(T > t+s \mid T > s) = \frac{e^{-\lambda(t+s)}}{e^{-\lambda s}} = e^{-\lambda t} \)}
+\\[10pt]
+
+    \textcolor{teal}{\( P(T > t) = e^{-\lambda t} \)}
+\end{center}
+
+Thus we prove:
+
+\begin{center}
+    \colorbox{lime}{\( P(T > t) = P(T > t+s \mid T > s) \)}
+\end{center}
+
+\end{document}
+
