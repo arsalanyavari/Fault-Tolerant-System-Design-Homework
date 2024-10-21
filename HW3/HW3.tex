@@ -1,0 +1,148 @@
+\documentclass[12pt]{article}
+ \usepackage{xcolor}
+ \usepackage[margin=1in]{geometry} 
+ \usepackage{amsmath,amsthm,amssymb}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Homework 3}
+\author{Amir Arsalan Yavari}
+% \date{} 
+\maketitle
+
+\textbf{Provide an example to show that if two variables are not independent, when we want to express the intersection of these two variables conditionally on another variable, their probability may become independent of each other.}\\[10pt]
+
+If we have:
+\begin{center}
+$P(A \cap B) \neq P(A)P(B)$
+\end{center}
+
+then we can have:
+\begin{center}
+$P((A \cap B) | C) = P(A | C) P(B | C)$\\[7pt]
+\end{center}
+
+\textbf{Assumptions:}
+\\
+
+Let's consider the probability of being invited to a party.  
+
+\colorbox{cyan}{- A is the event of an individual being invited to a party and attending.} 
+
+\colorbox{cyan}{- B is the event of their friend being invited to the party and attending.}
+\\
+
+\colorbox{cyan}{\begin{minipage}{\textwidth}
+Now, if individual A is invited and attends the party, there is a higher probability that their friend has also been invited and will go, thus the second event is dependent on the first. (This is due to social relationships; people who are friends are often invited to similar events. Additionally, if the first individual wants to attend the party, it may also influence the second individual's decision to go to the party.)
+\end{minipage}}
+\\
+
+In this case, we have:  
+
+\begin{center}
+    \colorbox{red}{\( P(A \cap B) \neq P(A)P(B) \)}
+
+    \colorbox{cyan}{\( P(A \cap B) = P(A) \cdot P(B|A) \)}
+\end{center}
+
+Now, suppose we define C as follows:  
+C is being invited to a company party (from a specific department, e.g., invitations for developers in the company).
+In this scenario, the invitations and attendance of the two individuals are not dependent on each other but depend on their job and presence in that department of the company.  
+\newpage
+In this case, we have:  
+
+\begin{center}
+
+    \[
+   P(A \cap B \mid C) = \frac{P(A \cap B \cap C)}{P(C)}
+   \]
+
+   \colorbox{lime}{\(   P(A \mid C) = \frac{P(A \cap C)}{P(C)}\)}
+   ,
+   \(\quad P(B \mid C) = \frac{P(B \cap C)}{P(C)}\)
+
+    \[
+   P(A \cap B \cap C) = P(A \cap C) \cdot P(B \mid A \cap C)
+   \]\\[15pt]
+    
+\end{center}
+
+
+Based on that B is independent of \(A | C\), we have:
+
+
+\begin{center}
+
+    \(   P(B \mid A \cap C) = P(B \mid C)\) \\[15pt]
+   
+    \colorbox{green}{\( \Rightarrow P(A \cap B \mid C) = \frac{P(A \cap C) \cdot P(B \mid C)}{P(C)} = P(A \mid C) \cdot P(B \mid C) \)}\\[30pt]
+    
+
+\end{center}
+
+
+\textbf{Example:}
+
+    % \item $P(A|C) = 0.7$ (If the manager attends, Person 1 has a 70\% chance of attending).
+    % \item $P(B|C) = 0.8$ (If the manager attends, Person 2 has an 80\% chance of attending).
+    % \item $P(A|\neg C) = 0.2$ (If the manager does not attend, Person 1 has a 20\% chance of attending).
+    % \item $P(B|\neg C) = 0.3$ (If the manager does not attend, Person 2 has a 30\% chance of attending).
+
+\colorbox{cyan}{- C is the event of a manager being invited to a party and attending.}\\
+
+- $P(A)=0.5$, probability of individual A being invited and attending a party.
+
+- $P(B)=0.6$, probability of individual B being invited and attending a party.
+
+- $P(C)=0.6$, probability of individual Manager being invited and attending a party.
+
+- $P(B|A)=0.8$, meaning the probability of B attending given A attends.
+
+- $P(B|\neg A)=0.4$, meaning the probability of B attending given A doesn't attend.
+
+- $P(A|C)=0.7$ if the manager attends, probability of A attending given they are invited to a company party.
+
+- $P(B|C)=0.8$ if the manager attends, probability of B attending given they are invited to the same party.
+
+- $P(A|\neg C)=0.2$ probability of A attending given they are invited to the same party.
+
+- $P(B|\neg C)=0.3$ probability of B attending given they are invited to the same party.\\[20pt]
+
+\textbf{So we have:}
+
+\[
+P(A) \cdot P(B) = 0.5 \cdot 0.6 = 0.3
+\]
+\[
+P(A \cap B) = P(A) \cdot P(B|A) = 0.5 \cdot 0.8 = 0.4
+\]
+\[
+P(A \cap B | C) = P(A | C) \cdot P(B | C) = 0.7 \cdot 0.8 = 0.56
+\]
+\begin{center}
+    \colorbox{cyan}{\( 0.3 \neq 0.4 \)}
+\end{center}
+\end{document}
+

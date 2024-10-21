@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Amir Arsalan Yavari" />
+  <title>Homework 3</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Homework 3</h1>
+<p class="author">Amir Arsalan Yavari</p>
+</header>
+<p><strong>Provide an example to show that if two variables are not
+independent, when we want to express the intersection of these two
+variables conditionally on another variable, their probability may
+become independent of each other.</strong><br />
+If we have:</p>
+<div style="text-align: center;">
+  <p><span class="math inline">\(P(A \cap B) \neq P(A)P(B)\)</span></p>
+</div>
+<p>then we can have:</p>
+<div style="text-align: center;">
+  <p><span class="math inline">\(P((A \cap B) | C) = P(A | C) P(B |
+C)\)</span><br />
+</p>
+</div>
+<p><strong>Assumptions:</strong><br />
+Let’s consider the probability of being invited to a party.</p>
+<p><span style="background-color: cyan">- A is the event of an
+individual being invited to a party and attending.</span></p>
+<p><span style="background-color: cyan">- B is the event of their friend
+being invited to the party and attending.</span><br />
+</p>
+<div style="background-color: cyan">
+<p>Now, if individual A is invited and attends the party, there is a
+higher probability that their friend has also been invited and will go,
+thus the second event is dependent on the first. (This is due to social
+relationships; people who are friends are often invited to similar
+events. Additionally, if the first individual wants to attend the party,
+it may also influence the second individual’s decision to go to the
+party.)</p>
+</div>
+<p><br />
+In this case, we have:</p>
+<div style="text-align: center;">
+  <p><span style="background-color: red"><span class="math inline">\(P(A
+\cap B) \neq P(A)P(B)\)</span></span></p>
+<p><span style="background-color: cyan"><span class="math inline">\(P(A
+\cap B) = P(A) \cdot P(B|A)\)</span></span></p>
+</div>
+<p>Now, suppose we define C as follows: C is being invited to a company
+party (from a specific department, e.g., invitations for developers in
+the company). In this scenario, the invitations and attendance of the
+two individuals are not dependent on each other but depend on their job
+and presence in that department of the company. In this case, we
+have:</p>
+<div style="text-align: center;">
+  <p><span class="math display">\[P(A \cap B \mid C) = \frac{P(A \cap B
+\cap C)}{P(C)}\]</span></p>
+<p><span style="background-color: rgb(187, 255, 0); padding: 0.7%;"><span class="math inline">\(P(A
+\mid C) = \frac{P(A \cap C)}{P(C)}\)</span></span> , <span
+class="math inline">\(\quad P(B \mid C) = \frac{P(B \cap
+C)}{P(C)}\)</span></p>
+<p><span class="math display">\[P(A \cap B \cap C) = P(A \cap C) \cdot
+P(B \mid A \cap C)\]</span><br />
+</p>
+</div>
+<p>Based on that B is independent of <span class="math inline">\(A |
+C\)</span>, we have:</p>
+<div style="text-align: center;">
+<p><span class="math inline">\(P(B \mid A \cap C) = P(B \mid
+C)\)</span><br />
+<span style="background-color: rgb(0, 255, 0); padding: 0.7%;"><span
+class="math inline">\(\Rightarrow P(A \cap B \mid C) = \frac{P(A \cap C)
+\cdot P(B \mid C)}{P(C)} = P(A \mid C) \cdot P(B \mid
+C)\)</span></span><br />
+</p>
+</div>
+<p><strong>Example:</strong></p>
+<p><span style="background-color: cyan">- C is the event of a manager
+being invited to a party and attending.</span><br />
+- <span class="math inline">\(P(A)=0.5\)</span>, probability of
+individual A being invited and attending a party.</p>
+<p>- <span class="math inline">\(P(B)=0.6\)</span>, probability of
+individual B being invited and attending a party.</p>
+<p>- <span class="math inline">\(P(C)=0.6\)</span>, probability of
+individual Manager being invited and attending a party.</p>
+<p>- <span class="math inline">\(P(B|A)=0.8\)</span>, meaning the
+probability of B attending given A attends.</p>
+<p>- <span class="math inline">\(P(B|\neg A)=0.4\)</span>, meaning the
+probability of B attending given A doesn’t attend.</p>
+<p>- <span class="math inline">\(P(A|C)=0.7\)</span> if the manager
+attends, probability of A attending given they are invited to a company
+party.</p>
+<p>- <span class="math inline">\(P(B|C)=0.8\)</span> if the manager
+attends, probability of B attending given they are invited to the same
+party.</p>
+<p>- <span class="math inline">\(P(A|\neg C)=0.2\)</span> probability of
+A attending given they are invited to the same party.</p>
+<p>- <span class="math inline">\(P(B|\neg C)=0.3\)</span> probability of
+B attending given they are invited to the same party.<br />
+<strong>So we have:</strong></p>
+<p><span class="math display">\[P(A) \cdot P(B) = 0.5 \cdot 0.6 =
+0.3\]</span> <span class="math display">\[P(A \cap B) = P(A) \cdot
+P(B|A) = 0.5 \cdot 0.8 = 0.4\]</span> <span class="math display">\[P(A
+\cap B | C) = P(A | C) \cdot P(B | C) = 0.7 \cdot 0.8 =
+0.56\]</span></p>
+<div style="text-align: center;">
+<p><span style="background-color: cyan"><span class="math inline">\(0.3
+\neq 0.4\)</span></span></p>
+</div>
+</body>
+</html>
